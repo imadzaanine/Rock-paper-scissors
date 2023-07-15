@@ -40,39 +40,39 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 function getComputerChoice() {
-    let Selection = Math.floor(Math.random() * 3);
-    if (Selection === 0) {
-        return "rock";
+  let Selection = Math.floor(Math.random() * 3);
+  if (Selection === 0) {
+    return "rock";
+  } else {
+    if (Selection === 1) {
+      return "paper";
     } else {
-        if (Selection === 1) {
-            return "paper";
-        } else {
-            return "scissors";
-        }
+      return "scissors";
     }
-    
+  }
 }
-function game() {
-    
-for (let i = 0; i < 5; i++) {
-    
-
-const playerSelection = prompt("Rock..paper..scissors..shoot")
-const computerSelection = getComputerChoice();
-const resault = playRound(playerSelection, computerSelection);
-console.log(resault);
 let playerWins = 0;
 let computerWins = 0;
-if (resault.includes("won")) {
-    playerWins++;
-    
-}else{
-    if (resault.includes("lost")) {
+function game() {
+  while (playerWins < 5 && computerWins < 5) {
+    const playerSelection = prompt("Rock..paper..scissors..shoot");
+    const computerSelection = getComputerChoice();
+    const resault = playRound(playerSelection, computerSelection);
+    console.log(resault);
+
+    if (resault.includes("won")) {
+      playerWins++;
+    } else {
+      if (resault.includes("lost")) {
         computerWins++;
+      }
     }
+    console.log(`player: ${playerWins}` + `Computer: ${computerWins}`);
+  }
+  if (playerWins === 5) {
+    console.log("You won");
+  } else {
+    console.log("You lost");
+  }
 }
-console.log(`player: ${playerWins}`+`Computer: ${computerWins}`);
-
-}
-}
-
+game();
