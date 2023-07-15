@@ -40,7 +40,7 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 function getComputerChoice() {
-    let Selection = Math.random(Math.floor() * 3);
+    let Selection = Math.floor(Math.random() * 3);
     if (Selection === 0) {
         return "rock";
     } else {
