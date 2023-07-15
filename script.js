@@ -52,6 +52,27 @@ function getComputerChoice() {
     }
     
 }
-const playerSelection = "rock";
+function game() {
+    
+for (let i = 0; i < 5; i++) {
+    
+
+const playerSelection = prompt("Rock..paper..scissors..shoot")
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+const resault = playRound(playerSelection, computerSelection);
+console.log(resault);
+let playerWins = 0;
+let computerWins = 0;
+if (resault.includes("won")) {
+    playerWins++;
+    
+}else{
+    if (resault.includes("lost")) {
+        computerWins++;
+    }
+}
+console.log(`player: ${playerWins}`+`Computer: ${computerWins}`);
+
+}
+}
+
